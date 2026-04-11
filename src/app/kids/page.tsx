@@ -4,7 +4,7 @@ import Image from 'next/image';
 export const metadata = { title: 'Kids Mattresses & Bedroom Sets' };
 
 const products = [
-  { name: 'Nectar Kids Mattress', slug: 'mattress', price: 299, desc: 'Dual-sided design grows with your child. CertiPUR-US certified foam.', image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80', badge: 'AGES 3-12' },
+  { name: 'Nectar Kids Mattress', slug: 'mattress', price: 299, desc: 'Dual-sided design grows with your child. CertiPUR-US certified foam.', image: 'https://media.residenthome.com/mui/nectar/categories/kids-hero.webp', badge: 'AGES 3-12' },
   { name: 'Onita Kids Bedroom Set', slug: 'onita-bedroom-set', price: 699, desc: 'Kids bed frame with built-in storage drawers + mattress', image: 'https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600&q=80' },
   { name: 'Onita Platform Bed with Storage', slug: 'onita-platform', price: 349, desc: 'Durable kids platform bed with side drawers', image: 'https://images.unsplash.com/photo-1616627547584-bf28cee262db?w=600&q=80' },
 ];

@@ -15,7 +15,7 @@ const allKidsProducts = [
     price: 299,
     originalPrice: 499,
     badge: 'AGES 3-12',
-    image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80',
+    image: 'https://media.residenthome.com/mui/nectar/categories/kids-hero.webp',
     features: ['Dual-sided: firmer (ages 3-7) & softer (ages 7-12)', 'CertiPUR-US® certified foam', 'GreenGuard Gold certified', 'Waterproof, removable cover', 'Breathable & hypoallergenic', '100-Night trial'],
     specs: [
       { label: 'Height', value: '8"' },
