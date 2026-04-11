@@ -146,7 +146,7 @@ export default function ProductPage() {
                 {sizes.map(s => (
                   <button
                     key={s}
-                    onClick={() => setSelectedSize(s)}
+                    onClick={() => { setSelectedSize(s); setSelectedImage(0); }}
                     className={`py-3 px-4 rounded-xl border-2 text-sm font-medium transition-all duration-200 ${
                       selectedSize === s
                         ? 'border-blue-700 bg-blue-50 text-blue-700 shadow-sm'
