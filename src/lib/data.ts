@@ -137,9 +137,6 @@ export const mattresses: Product[] = [
     ],
     images: [
       'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80',
-      'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80',
-      'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80',
-      'https://images.unsplash.com/photo-1588046130717-0eb0c9a3ba15?w=800&q=80',
     ],
     firmness: 5,
     sleepPositions: ['Side', 'Back', 'Stomach'],
@@ -216,9 +213,6 @@ export const mattresses: Product[] = [
     ],
     images: [
       'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80',
-      'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80',
-      'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80',
-      'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&q=80',
     ],
     firmness: 5,
     sleepPositions: ['Side', 'Back'],
@@ -294,9 +288,6 @@ export const mattresses: Product[] = [
       { label: 'Warranty', value: 'Forever Warranty™' },
     ],
     images: [
-      'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80',
-      'https://images.unsplash.com/photo-1588046130717-0eb0c9a3ba15?w=800&q=80',
-      'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80',
       'https://lexingtonoverstockwarehouse.com/wp-content/uploads/2023/07/NM-M142.jpg',
     ],
     firmness: 4,
@@ -375,9 +366,6 @@ export const mattresses: Product[] = [
     ],
     images: [
       'https://images.unsplash.com/photo-1588046130717-0eb0c9a3ba15?w=800&q=80',
-      'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80',
-      'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80',
-      'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80',
     ],
     firmness: 5,
     sleepPositions: ['Side', 'Back', 'Stomach'],
@@ -453,9 +441,6 @@ export const mattresses: Product[] = [
       { label: 'Warranty', value: 'Forever Warranty™' },
     ],
     images: [
-      'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80',
-      'https://images.unsplash.com/photo-1588046130717-0eb0c9a3ba15?w=800&q=80',
-      'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&q=80',
       'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80',
     ],
     firmness: 5,
@@ -495,9 +480,6 @@ export const mattresses: Product[] = [
     ],
     images: [
       'https://images.unsplash.com/photo-1588046130717-0eb0c9a3ba15?w=800&q=80',
-      'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&q=80',
-      'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80',
-      'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80',
     ],
     firmness: 4,
     sleepPositions: ['Side', 'Back'],
@@ -535,9 +517,6 @@ export const mattresses: Product[] = [
     ],
     images: [
       'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&q=80',
-      'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80',
-      'https://images.unsplash.com/photo-1588046130717-0eb0c9a3ba15?w=800&q=80',
-      'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80',
     ],
     firmness: 4,
     sleepPositions: ['Side', 'Back'],
@@ -575,9 +554,6 @@ export const mattresses: Product[] = [
       { label: 'Warranty', value: 'Forever Warranty™' },
     ],
     images: [
-      'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80',
-      'https://images.unsplash.com/photo-1588046130717-0eb0c9a3ba15?w=800&q=80',
-      'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80',
       'https://www.slumberland.com/cdn/shop/files/QK1089283_ASSL_AFR_OL.jpg?v=1763488601&width=1214',
     ],
     firmness: 5,
