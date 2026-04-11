@@ -14,7 +14,7 @@ const bedFrames = [
   { name: 'Lumea Platform Bed Frame', slug: 'lumea', price: 599, desc: 'Natural wood finish, Japanese-inspired design with solid slat support.', image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80' },
   { name: 'Onita Storage Bed Frame', slug: 'onita', price: 649, desc: 'Built-in storage drawers for extra bedroom organization.', image: 'https://ashleyfurniture.scene7.com/is/image/AshleyFurniture/EB9630-84-89-B100-12?', badge: 'NEW' },
   { name: 'Mornington Bed Frame', slug: 'mornington', price: 449, desc: 'Upholstered headboard with modern silhouette. Easy assembly.', image: 'https://m.media-amazon.com/images/I/81s6nAgBCYL._AC_UF894,1000_QL80_.jpg' },
-  { name: 'Bamboo Bed Frame', slug: 'bamboo', price: 549, desc: 'Sustainable bamboo, Japanese joinery, low-profile design.', image: 'https://images.unsplash.com/photo-1616627547584-bf28cee262db?w=600&q=80' },
+  { name: 'Bamboo Bed Frame', slug: 'bamboo', price: 549, desc: 'Sustainable bamboo, Japanese joinery, low-profile design.', image: 'https://media.residenthome.com/nectarsleep/bundles/bamboo/BambooNaturalWood/MultiBrand_BambooFrame_Render_Angle3Q_ColorNatural-Bamboo.webp' },
   { name: 'Foundation Bed Frame', slug: 'foundation', price: 199, desc: 'Steel frame, simple 5-minute assembly, low profile.', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqXQZEGTq7gKJHOcca0385uNWCLCLPIEWHPA&s' },
 ];
 

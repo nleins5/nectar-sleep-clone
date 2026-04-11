@@ -107,7 +107,7 @@ const allBedFrames = [
     description: 'The Bamboo Bed Frame is crafted from sustainably harvested bamboo with traditional Japanese joinery techniques. Its low-profile design creates a zen-like atmosphere in your bedroom while providing excellent mattress support.',
     price: 549,
     originalPrice: 949,
-    image: 'https://images.unsplash.com/photo-1616627547584-bf28cee262db?w=800&q=80',
+    image: 'https://media.residenthome.com/nectarsleep/bundles/bamboo/BambooNaturalWood/MultiBrand_BambooFrame_Render_Angle3Q_ColorNatural-Bamboo.webp',
     features: ['Sustainable bamboo construction', 'Japanese joinery – no metal fasteners', 'Low-profile platform design', 'Natural bamboo finish', 'Excellent ventilation', 'Eco-friendly packaging'],
     specs: [
       { label: 'Material', value: '100% Moso Bamboo' },
