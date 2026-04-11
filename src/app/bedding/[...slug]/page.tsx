@@ -124,7 +124,7 @@ const allBeddingProducts = [
     description: 'The Serenity Cooling Pillow features gel-infused memory foam with a cooling PCM cover that actively draws heat away from your skin. Wake up refreshed with consistent support and temperature regulation all night long.',
     price: 69,
     originalPrice: 99,
-    image: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1519235619284-d95d1e37da74?w=600&q=80',
     features: ['Gel-infused memory foam', 'Phase Change Material cover', 'Active heat dissipation', 'Ergonomic contour shape', 'Hypoallergenic', 'Removable, washable cover'],
     specs: [
       { label: 'Fill', value: 'Gel-infused memory foam' },
