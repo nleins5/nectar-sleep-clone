@@ -20,20 +20,22 @@ const bedFrames = [
 
 function ProductCard({ product }: { product: { name: string; slug: string; price: number; desc: string; image: string; badge?: string } }) {
   return (
-    <div style={{ background: 'white', borderRadius: 16, overflow: 'hidden', border: '1px solid #e5e7eb', transition: 'transform 0.3s, box-shadow 0.3s' }} className="product-card">
-      <div style={{ position: 'relative', aspectRatio: '4/3', background: '#f3f4f6', overflow: 'hidden' }}>
-        <Image src={product.image} alt={product.name} fill style={{ objectFit: 'cover' }} className="card-image" sizes="(max-width: 768px) 100vw, 33vw" />
-        {product.badge && <span style={{ position: 'absolute', top: 12, left: 12, background: '#1a3c5e', color: 'white', fontSize: 11, fontWeight: 700, padding: '4px 12px', borderRadius: 20 }}>{product.badge}</span>}
-      </div>
-      <div style={{ padding: 20 }}>
-        <h3 style={{ fontSize: 18, fontWeight: 700, color: '#111827', marginBottom: 6 }}>{product.name}</h3>
-        <p style={{ fontSize: 13, color: '#6b7280', marginBottom: 12, lineHeight: 1.5 }}>{product.desc}</p>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <span style={{ fontSize: 24, fontWeight: 800, color: '#111827' }}>${product.price}</span>
-          <span style={{ fontSize: 13, color: '#1a3c5e', fontWeight: 600 }}>Queen size</span>
+    <Link href={`/bed-frames/${product.slug}`} style={{ textDecoration: 'none' }}>
+      <div style={{ background: 'white', borderRadius: 16, overflow: 'hidden', border: '1px solid #e5e7eb', transition: 'transform 0.3s, box-shadow 0.3s', cursor: 'pointer' }} className="product-card">
+        <div style={{ position: 'relative', aspectRatio: '4/3', background: '#f3f4f6', overflow: 'hidden' }}>
+          <Image src={product.image} alt={product.name} fill style={{ objectFit: 'cover' }} className="card-image" sizes="(max-width: 768px) 100vw, 33vw" />
+          {product.badge && <span style={{ position: 'absolute', top: 12, left: 12, background: '#1a3c5e', color: 'white', fontSize: 11, fontWeight: 700, padding: '4px 12px', borderRadius: 20 }}>{product.badge}</span>}
+        </div>
+        <div style={{ padding: 20 }}>
+          <h3 style={{ fontSize: 18, fontWeight: 700, color: '#111827', marginBottom: 6 }}>{product.name}</h3>
+          <p style={{ fontSize: 13, color: '#6b7280', marginBottom: 12, lineHeight: 1.5 }}>{product.desc}</p>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            <span style={{ fontSize: 24, fontWeight: 800, color: '#111827' }}>${product.price}</span>
+            <span style={{ fontSize: 13, color: '#1a3c5e', fontWeight: 600 }}>Queen size</span>
+          </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 

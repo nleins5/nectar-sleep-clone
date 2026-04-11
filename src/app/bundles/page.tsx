@@ -38,7 +38,7 @@ export default function BundlesPage() {
                     <span style={{ fontSize: 14, color: '#9ca3af', textDecoration: 'line-through' }}>${b.originalPrice}</span>
                   </div>
                   <p style={{ fontSize: 12, color: '#dc2626', fontWeight: 600, marginBottom: 16 }}>Save ${b.originalPrice - b.price} ({savePct}% off)</p>
-                  <Link href={`/mattresses`} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, padding: '14px 24px', background: '#1a3c5e', color: 'white', borderRadius: 12, fontWeight: 600, fontSize: 15, textDecoration: 'none' }}>
+                  <Link href={`/bundles/${b.slug}`} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, padding: '14px 24px', background: '#1a3c5e', color: 'white', borderRadius: 12, fontWeight: 600, fontSize: 15, textDecoration: 'none' }}>
                     Shop Bundle <ChevronRight size={16} />
                   </Link>
                 </div>
