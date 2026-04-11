@@ -462,8 +462,6 @@ export const mattresses: Product[] = [
     sleepPositions: ['Side', 'Back'],
     highlights: ['365-Night Trial', 'Copper Infused', 'Forever Warranty™', 'Zoned Support'],
   },
-];
-
   {
     id: 'nectar-ultra',
     slug: 'nectar-ultra',
@@ -586,6 +584,8 @@ export const mattresses: Product[] = [
     sleepPositions: ['Side', 'Back', 'Stomach'],
     highlights: ['365-Night Trial', 'Organic Cotton', 'Forever Warranty™', '1400+ Coils'],
   },
+];
+
 // ============================================================
 // REVIEWS
 // ============================================================
