@@ -23,6 +23,14 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'ashleyfurniture.scene7.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'www.slumberland.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'lexingtonoverstockwarehouse.com',
+      },
     ],
   },
 };
