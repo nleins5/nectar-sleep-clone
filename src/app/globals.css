@@ -1,26 +1,256 @@
 @import "tailwindcss";
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;600;700&display=swap');
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --nectar-blue: #1a3c5e;
+  --nectar-blue-light: #2563a8;
+  --nectar-navy: #0f2744;
+  --nectar-teal: #0d9488;
+  --nectar-gold: #f59e0b;
+  --nectar-cream: #fef9f0;
+  --nectar-gray: #f8f9fa;
+  --nectar-text: #1a1a2e;
+  --nectar-muted: #6b7280;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', sans-serif;
+  color: var(--nectar-text);
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
 }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #c1c1c1; border-radius: 3px; }
+
+/* ── Animations ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes pulse-slow {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.05); }
+}
+@keyframes shimmer {
+  0%   { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+@keyframes countdown-tick {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-4px); }
+  100% { transform: translateY(0); }
+}
+
+.animate-fade-in-up  { animation: fadeInUp 0.6s ease forwards; }
+.animate-fade-in     { animation: fadeIn 0.4s ease forwards; }
+.animate-slide-left  { animation: slideInLeft 0.5s ease forwards; }
+.animate-pulse-slow  { animation: pulse-slow 2s ease-in-out infinite; }
+
+/* ── Gradient helpers ── */
+.gradient-blue {
+  background: linear-gradient(135deg, var(--nectar-blue) 0%, var(--nectar-blue-light) 100%);
+}
+.gradient-dark {
+  background: linear-gradient(135deg, var(--nectar-navy) 0%, #1a3c5e 100%);
+}
+
+/* ── Star rating ── */
+.star-filled { color: #f59e0b; }
+.star-empty  { color: #d1d5db; }
+
+/* ── Product card hover ── */
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+/* ── Button variants ── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: var(--nectar-blue);
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+.btn-primary:hover {
+  background: var(--nectar-navy);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(26,60,94,0.3);
+}
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: transparent;
+  color: var(--nectar-blue);
+  border: 2px solid var(--nectar-blue);
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-secondary:hover {
+  background: var(--nectar-blue);
+  color: white;
+}
+
+/* ── Section headings ── */
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: var(--nectar-text);
+}
+
+/* ── Badge ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.badge-blue  { background: var(--nectar-blue); color: white; }
+.badge-gold  { background: #fef3c7; color: #92400e; }
+.badge-green { background: #d1fae5; color: #065f46; }
+.badge-red   { background: #fee2e2; color: #991b1b; }
+
+/* ── Mega menu ── */
+.mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100vw;
+  background: white;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 1000;
+}
+.mega-menu.open {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
+
+/* ── Sticky announcement bar ── */
+.announcement-bar {
+  background: var(--nectar-blue);
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+  padding: 10px 16px;
+}
+
+/* ── Firmness slider ── */
+.firmness-track {
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(to right, #bfdbfe, #1d4ed8, #1e3a5f);
+  position: relative;
+}
+
+/* ── Comparison table ── */
+.compare-highlight { background: #eff6ff; border-color: var(--nectar-blue); }
+
+/* ── Progress bar ── */
+.rating-bar {
+  height: 8px;
+  border-radius: 4px;
+  background: #e5e7eb;
+  overflow: hidden;
+}
+.rating-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: #f59e0b;
+  transition: width 1s ease;
+}
+
+/* ── Countdown timer ── */
+.countdown-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 8px;
+  padding: 8px 14px;
+  min-width: 56px;
+}
+.countdown-value {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.countdown-label {
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.8;
+  margin-top: 2px;
+}
+
+/* ── Skeleton loader ── */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* ── Sticky header shadow ── */
+.header-shadow { box-shadow: 0 2px 16px rgba(0,0,0,0.08); }
+
+/* ── Image aspect ratio helpers ── */
+.aspect-product { aspect-ratio: 4/3; }
+.aspect-hero    { aspect-ratio: 16/7; }
+
+/* ── Swiper overrides ── */
+.swiper-pagination-bullet-active { background: var(--nectar-blue) !important; }
+.swiper-button-next,
+.swiper-button-prev { color: var(--nectar-blue) !important; }

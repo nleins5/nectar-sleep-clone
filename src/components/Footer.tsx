@@ -1,0 +1,97 @@
+import Link from 'next/link';
+import { footerLinks } from '@/lib/data';
+import { Globe, Heart, MessageCircle, Play } from 'lucide-react';
+
+export default function Footer() {
+  return (
+    <footer className="bg-gray-900 text-gray-300 pt-16 pb-8">
+      <div className="max-w-7xl mx-auto px-4 lg:px-8">
+        {/* Top grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 pb-12 border-b border-gray-700">
+          {/* Brand */}
+          <div className="col-span-2 md:col-span-3 lg:col-span-1">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-8 h-8 rounded-full gradient-blue flex items-center justify-center text-white font-bold text-sm">N</div>
+              <span className="text-xl font-bold text-white" style={{ fontFamily: 'Playfair Display, serif' }}>Nectar Sleep</span>
+            </div>
+            <p className="text-sm text-gray-400 mb-4 leading-relaxed">
+              We focus on one thing only – the most comfortable bed possible. Your rest is our mission.
+            </p>
+            <div className="flex gap-3">
+              {[Globe, Heart, MessageCircle, Play].map((Icon, i) => (
+                <a key={i} href="#" className="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-700 transition-colors">
+                  <Icon className="w-4 h-4" />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Shop */}
+          <div>
+            <h4 className="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Shop</h4>
+            <ul className="space-y-2">
+              {footerLinks.shop.map(l => (
+                <li key={l.label}><Link href={l.href} className="text-sm hover:text-white transition-colors">{l.label}</Link></li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Support */}
+          <div>
+            <h4 className="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Customer Support</h4>
+            <ul className="space-y-2">
+              {footerLinks.support.map(l => (
+                <li key={l.label}><Link href={l.href} className="text-sm hover:text-white transition-colors">{l.label}</Link></li>
+              ))}
+            </ul>
+          </div>
+
+          {/* About */}
+          <div>
+            <h4 className="text-white font-semibold text-sm mb-4 uppercase tracking-wider">About Us</h4>
+            <ul className="space-y-2">
+              {footerLinks.about.map(l => (
+                <li key={l.label}><Link href={l.href} className="text-sm hover:text-white transition-colors">{l.label}</Link></li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <h4 className="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Resources</h4>
+            <ul className="space-y-2">
+              {footerLinks.resources.map(l => (
+                <li key={l.label}><Link href={l.href} className="text-sm hover:text-white transition-colors">{l.label}</Link></li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Trust badges row */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-10 border-b border-gray-700">
+          {[
+            { icon: '🌙', text: '365-Night Trial' },
+            { icon: '🛡️', text: 'Forever Warranty™' },
+            { icon: '🚚', text: 'Free Shipping & Returns' },
+            { icon: '✅', text: 'CertiPUR-US® Certified' },
+          ].map(b => (
+            <div key={b.text} className="flex items-center gap-3">
+              <span className="text-2xl">{b.icon}</span>
+              <span className="text-sm font-medium text-gray-300">{b.text}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom bar */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 text-xs text-gray-500">
+          <p>©{new Date().getFullYear()} Nectar Sleep. All rights reserved.</p>
+          <div className="flex gap-6">
+            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link>
+            <Link href="/sitemap" className="hover:text-white transition-colors">Sitemap</Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
