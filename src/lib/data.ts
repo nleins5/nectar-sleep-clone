@@ -693,8 +693,8 @@ export const footerLinks = {
     { label: 'Returns', href: '/faq' },
     { label: 'Reviews', href: '/reviews' },
     { label: 'Financing Options', href: '/financing' },
-    { label: 'Trial Policies', href: '/about' },
-    { label: 'Warranty Policies', href: '/about' },
+    { label: 'Trial Policies', href: '/trial-policy' },
+    { label: 'Warranty Policies', href: '/warranty' },
   ],
   about: [
     { label: 'Our Story', href: '/about' },
