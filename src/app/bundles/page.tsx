@@ -7,8 +7,8 @@ export const metadata = { title: 'Mattress Bundles – Save Up to 66%' };
 const bundles = [
   { name: 'Premier Adjustable Bundle', slug: 'adjustable-frame', desc: 'Nectar mattress + Premier Adjustable Base', price: 1098, originalPrice: 2748, image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80', badge: 'SAVE 60%' },
   { name: 'Mornington Bundle', slug: 'mornington', desc: 'Nectar mattress + Mornington Bed Frame + Headboard', price: 898, originalPrice: 1998, image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600&q=80', badge: 'BEST VALUE' },
-  { name: 'Foundation Bundle', slug: 'foundation', desc: 'Nectar mattress + Steel Foundation Frame', price: 649, originalPrice: 1398, image: 'https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=600&q=80', badge: 'SAVE 53%' },
-  { name: 'Bamboo Bundle', slug: 'bamboo', desc: 'Nectar mattress + Japanese Bamboo Bed Frame', price: 998, originalPrice: 2198, image: 'https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600&q=80', badge: 'ECO-FRIENDLY' },
+  { name: 'Foundation Bundle', slug: 'foundation', desc: 'Nectar mattress + Steel Foundation Frame', price: 649, originalPrice: 1398, image: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=600&q=80', badge: 'SAVE 53%' },
+  { name: 'Bamboo Bundle', slug: 'bamboo', desc: 'Nectar mattress + Japanese Bamboo Bed Frame', price: 998, originalPrice: 2198, image: 'https://images.unsplash.com/photo-1616627547584-bf28cee262db?w=600&q=80', badge: 'ECO-FRIENDLY' },
 ];
 
 export default function BundlesPage() {
