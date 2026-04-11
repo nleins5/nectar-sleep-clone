@@ -106,7 +106,7 @@ const allBeddingProducts = [
     price: 79,
     originalPrice: 119,
     badge: 'TOP RATED',
-    image: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=600&q=80',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyMFMcuu3OxEdpHEgvhCL7yPejFnsWyGET4w&s',
     features: ['3 removable inserts', 'Adjustable height & firmness', 'Cooling gel memory foam', 'Breathable mesh cover', 'Works for all sleep positions', 'Machine washable cover'],
     specs: [
       { label: 'Fill', value: 'Gel memory foam (3 inserts)' },
@@ -124,7 +124,7 @@ const allBeddingProducts = [
     description: 'The Serenity Cooling Pillow features gel-infused memory foam with a cooling PCM cover that actively draws heat away from your skin. Wake up refreshed with consistent support and temperature regulation all night long.',
     price: 69,
     originalPrice: 99,
-    image: 'https://images.unsplash.com/photo-1567538096621-38d2284b23ff?w=600&q=80',
+    image: 'https://m.media-amazon.com/images/I/31eBXvuJ9BL._AC_.jpg',
     features: ['Gel-infused memory foam', 'Phase Change Material cover', 'Active heat dissipation', 'Ergonomic contour shape', 'Hypoallergenic', 'Removable, washable cover'],
     specs: [
       { label: 'Fill', value: 'Gel-infused memory foam' },
