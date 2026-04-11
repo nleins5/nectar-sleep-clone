@@ -2,10 +2,11 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Star, ChevronRight, Shield, Truck, RefreshCw, CreditCard, Award, Users } from 'lucide-react';
+import { Star, ChevronRight, Shield, Truck, RefreshCw, CreditCard, Award, Users, Sparkles } from 'lucide-react';
 import { mattresses, reviews, stats, trustBadges } from '@/lib/data';
+import Newsletter from '@/components/Newsletter';
 
-/* ─── Countdown Timer ─── */
+/* countdown */
 function Countdown() {
   const [time, setTime] = useState({ d: 2, h: 14, m: 33, s: 0 });
   useEffect(() => {
@@ -35,7 +36,7 @@ function Countdown() {
   );
 }
 
-/* ─── Star Rating ─── */
+/* stars */
 function Stars({ rating, size = 'sm' }: { rating: number; size?: 'sm' | 'md' }) {
   const s = size === 'sm' ? 'w-3.5 h-3.5' : 'w-5 h-5';
   return (
@@ -49,7 +50,7 @@ function Stars({ rating, size = 'sm' }: { rating: number; size?: 'sm' | 'md' }) 
   );
 }
 
-/* ─── Product Card ─── */
+/* product card */
 function ProductCard({ product }: { product: typeof mattresses[0] }) {
   const queenPrice = product.prices['Queen'];
   const queenOrig = product.originalPrices['Queen'];
@@ -59,7 +60,7 @@ function ProductCard({ product }: { product: typeof mattresses[0] }) {
   return (
     <div className="product-card bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm flex flex-col">
       <div className="relative aspect-product bg-gray-50 overflow-hidden">
-        <Image src={product.images[0]} alt={product.name} fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
+        <Image src={product.images[0]} alt={product.name} fill className="object-cover card-image" sizes="(max-width: 768px) 100vw, 33vw" />
         {product.badge && (
           <span className="absolute top-3 left-3 badge badge-blue">{product.badge}</span>
         )}
@@ -75,7 +76,7 @@ function ProductCard({ product }: { product: typeof mattresses[0] }) {
 
         <div className="flex flex-wrap gap-1 mb-4">
           {product.highlights.slice(0, 3).map(h => (
-            <span key={h} className="text-[11px] bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full">{h}</span>
+            <span key={h} className="feature-pill">{h}</span>
           ))}
         </div>
 
@@ -94,20 +95,20 @@ function ProductCard({ product }: { product: typeof mattresses[0] }) {
   );
 }
 
-/* ─── Review Card ─── */
+/* review card */
 function ReviewCard({ review }: { review: typeof reviews[0] }) {
   return (
-    <div className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm">
+    <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
       <Stars rating={review.rating} size="sm" />
       <h4 className="font-semibold text-gray-900 mt-2 mb-2">{review.title}</h4>
       <p className="text-sm text-gray-600 leading-relaxed mb-4">&ldquo;{review.body}&rdquo;</p>
       <div className="flex items-center gap-2">
-        <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-bold text-sm">
+        <div className="w-9 h-9 rounded-full gradient-blue flex items-center justify-center text-white font-bold text-sm">
           {review.author[0]}
         </div>
         <div>
           <p className="text-sm font-medium text-gray-900">{review.author}</p>
-          {review.verified && <p className="text-[11px] text-green-600">✓ Verified Purchase</p>}
+          {review.verified && <p className="text-[11px] text-green-600 font-medium">✓ Verified Purchase</p>}
         </div>
       </div>
     </div>
@@ -122,23 +123,23 @@ export default function HomePage() {
   return (
     <div>
       {/* ── HERO ── */}
-      <section className="relative min-h-[88vh] flex items-center overflow-hidden gradient-dark text-white">
-        {/* Background pattern */}
-        <div className="absolute inset-0 opacity-10"
-          style={{ backgroundImage: 'radial-gradient(circle at 20% 50%, #3b82f6 0%, transparent 50%), radial-gradient(circle at 80% 20%, #1d4ed8 0%, transparent 40%)' }} />
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden gradient-hero text-white noise-bg">
+        {/* Decorative orbs */}
+        <div className="absolute top-20 left-[10%] w-72 h-72 bg-blue-500/20 rounded-full blur-[100px] animate-float" />
+        <div className="absolute bottom-20 right-[15%] w-96 h-96 bg-indigo-500/15 rounded-full blur-[120px] animate-float delay-300" />
 
         <div className="relative max-w-7xl mx-auto px-4 lg:px-8 py-20 grid lg:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-in-up">
-            <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-2 text-sm mb-6 backdrop-blur-sm border border-white/20">
-              <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+            <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-2 text-sm mb-6">
+              <Sparkles className="w-4 h-4 text-yellow-400" />
               Spring Sale – Up to 50% Off Everything
             </div>
-            <h1 className="text-5xl lg:text-7xl font-black leading-tight mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
+            <h1 className="text-5xl lg:text-7xl font-black leading-[1.05] mb-5" style={{ fontFamily: 'Playfair Display, serif' }}>
               Sleep Better.<br />
-              <span className="text-blue-400">Live Better.</span>
+              <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">Live Better.</span>
             </h1>
-            <p className="text-lg text-gray-300 mb-6 max-w-lg leading-relaxed">
-              Join over 6 million happy sleepers. Our award-winning mattresses come with a 365-night trial and a forever warranty — because we're that confident you'll love it.
+            <p className="text-lg text-gray-300/90 mb-6 max-w-lg leading-relaxed">
+              Join over 6 million happy sleepers. Our award-winning mattresses come with a 365-night trial and a forever warranty — because we&apos;re that confident you&apos;ll love it.
             </p>
 
             {/* Countdown */}
@@ -148,10 +149,10 @@ export default function HomePage() {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <Link href="/mattresses" className="btn-primary bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 text-base">
+              <Link href="/mattresses" className="btn-primary bg-white text-blue-900 hover:bg-gray-50 px-8 py-4 text-base shadow-lg shadow-white/10">
                 Shop Mattresses
               </Link>
-              <Link href="/quiz" className="btn-secondary border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 text-base">
+              <Link href="/quiz" className="btn-secondary border-white/30 text-white hover:bg-white hover:text-blue-900 px-8 py-4 text-base backdrop-blur-sm">
                 Take Sleep Quiz
               </Link>
             </div>
@@ -165,30 +166,49 @@ export default function HomePage() {
           </div>
 
           {/* Hero image */}
-          <div className="hidden lg:block relative h-[520px] rounded-3xl overflow-hidden shadow-2xl animate-fade-in">
-            <Image
-              src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&q=85"
-              alt="Nectar mattress in a beautiful bedroom"
-              fill
-              className="object-cover"
-              priority
-            />
-            {/* Floating card */}
-            <div className="absolute bottom-6 left-6 bg-white rounded-xl p-4 shadow-lg text-gray-900 max-w-[200px]">
+          <div className="hidden lg:block relative">
+            <div className="relative h-[540px] rounded-3xl overflow-hidden shadow-2xl animate-fade-in animate-glow">
+              <Image
+                src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&q=85"
+                alt="Nectar mattress in a beautiful bedroom"
+                fill
+                className="object-cover"
+                priority
+              />
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+            </div>
+
+            {/* Floating review card */}
+            <div className="absolute -bottom-4 -left-8 glass-light rounded-2xl p-4 shadow-xl max-w-[220px] animate-float">
               <div className="flex items-center gap-1 mb-1"><Stars rating={5} size="sm" /></div>
-              <p className="text-xs font-semibold">&ldquo;Best sleep of my life!&rdquo;</p>
+              <p className="text-xs font-semibold text-gray-800">&ldquo;Best sleep of my life!&rdquo;</p>
               <p className="text-[11px] text-gray-500 mt-1">— Verified Buyer ✓</p>
+            </div>
+
+            {/* Floating badge */}
+            <div className="absolute top-8 -right-4 glass-light rounded-2xl p-3 shadow-xl animate-float delay-200">
+              <div className="flex items-center gap-2">
+                <div className="w-10 h-10 rounded-full gradient-gold flex items-center justify-center text-white">
+                  <Award className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-gray-800">#1 Best Seller</p>
+                  <p className="text-[10px] text-gray-500">Sleep Foundation 2024</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* ── STATS ── */}
-      <section className="bg-blue-700 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          {stats.map(s => (
-            <div key={s.label}>
-              <div className="text-4xl font-black mb-1">{s.value}</div>
+      <section className="gradient-premium text-white py-14 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 20% 50%, #fff 0%, transparent 50%)' }} />
+        <div className="relative max-w-7xl mx-auto px-4 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          {stats.map((s, i) => (
+            <div key={s.label} className={`animate-fade-in-up delay-${(i + 1) * 100}`}>
+              <div className="text-4xl lg:text-5xl font-black mb-1">{s.value}</div>
               <div className="text-blue-200 text-sm">{s.label}</div>
             </div>
           ))}
@@ -196,11 +216,14 @@ export default function HomePage() {
       </section>
 
       {/* ── TRUST BADGES ── */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50/80">
         <div className="max-w-7xl mx-auto px-4 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {trustBadges.map(b => (
-              <div key={b.id} className="bg-white rounded-2xl p-6 text-center shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {trustBadges.map((b, i) => (
+              <div
+                key={b.id}
+                className={`bg-white rounded-2xl p-6 text-center shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300 animate-fade-in-up delay-${(i + 1) * 100}`}
+              >
                 <span className="text-4xl mb-3 block">{b.icon}</span>
                 <h3 className="font-bold text-gray-900 mb-2">{b.title}</h3>
                 <p className="text-sm text-gray-500 leading-relaxed">{b.description}</p>
@@ -214,17 +237,18 @@ export default function HomePage() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="section-title text-4xl mb-4">Pick Your Perfect Mattress</h2>
+            <span className="inline-block text-sm font-semibold text-blue-600 uppercase tracking-wider mb-2">Our Collection</span>
+            <h2 className="section-title text-4xl lg:text-5xl mb-4">Pick Your Perfect Mattress</h2>
             <p className="text-gray-500 max-w-xl mx-auto">Whether you prefer the cradling feel of memory foam or the bouncy support of a hybrid, we have the perfect mattress for you.</p>
 
             {/* Type toggle */}
-            <div className="inline-flex bg-gray-100 rounded-xl p-1 mt-6">
+            <div className="inline-flex bg-gray-100 rounded-xl p-1.5 mt-6">
               {(['memory-foam', 'hybrid'] as const).map(t => (
                 <button
                   key={t}
                   onClick={() => setActiveType(t)}
-                  className={`px-6 py-2.5 rounded-lg text-sm font-semibold transition-all capitalize ${
-                    activeType === t ? 'bg-white shadow-sm text-blue-700' : 'text-gray-500 hover:text-gray-700'
+                  className={`px-6 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 capitalize ${
+                    activeType === t ? 'bg-white shadow-md text-blue-700' : 'text-gray-500 hover:text-gray-700'
                   }`}
                 >
                   {t === 'memory-foam' ? 'Memory Foam' : 'Hybrid'}
@@ -246,10 +270,11 @@ export default function HomePage() {
       </section>
 
       {/* ── SOCIAL PROOF ── */}
-      <section className="py-20 bg-blue-50">
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50/50">
         <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="section-title text-4xl mb-4">Join 6 Million Happy Sleepers</h2>
+            <span className="inline-block text-sm font-semibold text-blue-600 uppercase tracking-wider mb-2">Reviews</span>
+            <h2 className="section-title text-4xl lg:text-5xl mb-4">Join 6 Million Happy Sleepers</h2>
             <div className="flex items-center justify-center gap-4 flex-wrap">
               <div className="flex items-center gap-2">
                 <Stars rating={5} size="md" />
@@ -275,24 +300,25 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── STATS BAR – 9 OUT OF 10 ── */}
-      <section className="py-20 gradient-dark text-white">
-        <div className="max-w-7xl mx-auto px-4 lg:px-8">
-          <h2 className="section-title text-3xl text-center text-white mb-12">The Science of Better Sleep</h2>
+      {/* ── STATS BAR ── */}
+      <section className="py-20 gradient-dark text-white relative overflow-hidden noise-bg">
+        <div className="absolute top-0 left-1/3 w-80 h-80 bg-blue-500/10 rounded-full blur-[120px]" />
+        <div className="relative max-w-7xl mx-auto px-4 lg:px-8">
+          <h2 className="section-title text-3xl lg:text-4xl text-center text-white mb-12">The Science of Better Sleep</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             {[
               { stat: '9 out of 10', desc: 'Nectar customers would recommend Nectar to their family and friends.' },
               { stat: '9 out of 10', desc: 'Said their Nectar mattress helped reduce overall aches, stiffness, and soreness.' },
               { stat: '9 out of 10', desc: 'Back pain sufferers said their Nectar mattress helped some or a lot.' },
-            ].map(item => (
-              <div key={item.stat} className="p-8 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20">
-                <div className="text-5xl font-black text-blue-400 mb-4">{item.stat}</div>
+            ].map((item, i) => (
+              <div key={i} className="glass rounded-2xl p-8 hover:bg-white/10 transition-colors">
+                <div className="text-5xl font-black bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent mb-4">{item.stat}</div>
                 <p className="text-gray-300 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
           <div className="text-center mt-10">
-            <Link href="/reviews" className="btn-secondary border-white text-white hover:bg-white hover:text-blue-900">
+            <Link href="/reviews" className="btn-secondary border-white/30 text-white hover:bg-white hover:text-blue-900">
               Read All Reviews <ChevronRight className="w-4 h-4" />
             </Link>
           </div>
@@ -307,9 +333,9 @@ export default function HomePage() {
             <h2 className="text-2xl font-bold text-gray-900">The USA&apos;s Most Awarded Mattress Brand</h2>
           </div>
           <p className="text-gray-500 mb-10">200+ awards from top publications including Good Housekeeping, Sleep Foundation, and more.</p>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-3">
             {['Good Housekeeping', 'Forbes', 'Sleep Foundation', 'NY Times Wirecutter', 'CNN', 'CNET'].map(pub => (
-              <div key={pub} className="px-6 py-3 border border-gray-200 rounded-xl text-sm font-semibold text-gray-700 hover:border-blue-300 hover:text-blue-700 transition-all">
+              <div key={pub} className="px-6 py-3 border border-gray-200 rounded-xl text-sm font-semibold text-gray-700 hover:border-blue-300 hover:text-blue-700 hover:shadow-sm transition-all cursor-default">
                 🏆 {pub}
               </div>
             ))}
@@ -318,17 +344,19 @@ export default function HomePage() {
       </section>
 
       {/* ── CTA BANNER ── */}
-      <section className="py-24 bg-blue-700 text-white text-center">
-        <div className="max-w-3xl mx-auto px-4">
-          <h2 className="section-title text-4xl text-white mb-4">Try It for 365 Nights – Risk Free</h2>
+      <section className="py-24 gradient-premium text-white text-center relative overflow-hidden">
+        <div className="absolute inset-0 noise-bg" />
+        <div className="absolute top-0 right-1/4 w-72 h-72 bg-white/5 rounded-full blur-[100px]" />
+        <div className="relative max-w-3xl mx-auto px-4">
+          <h2 className="section-title text-4xl lg:text-5xl text-white mb-4">Try It for 365 Nights – Risk Free</h2>
           <p className="text-blue-200 mb-8 text-lg leading-relaxed">
             We&apos;re so confident you&apos;ll love your Nectar that we offer the longest home trial in the industry. Don&apos;t love it? We&apos;ll pick it up and give you a full refund.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Link href="/mattresses" className="btn-primary bg-white text-blue-700 hover:bg-gray-100 px-10 py-4 text-base">
+            <Link href="/mattresses" className="btn-primary bg-white text-blue-700 hover:bg-gray-100 px-10 py-4 text-base shadow-lg">
               Shop Now – Up to 50% Off
             </Link>
-            <Link href="/quiz" className="btn-secondary border-white text-white hover:bg-white hover:text-blue-700 px-10 py-4 text-base">
+            <Link href="/quiz" className="btn-secondary border-white/30 text-white hover:bg-white hover:text-blue-700 px-10 py-4 text-base">
               Take the Sleep Quiz
             </Link>
           </div>
@@ -344,13 +372,14 @@ export default function HomePage() {
       {/* ── FIND IN STORE ── */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 lg:px-8 flex flex-col lg:flex-row items-center gap-10">
-          <div className="relative w-full lg:w-1/2 h-64 rounded-2xl overflow-hidden shadow-lg">
+          <div className="relative w-full lg:w-1/2 h-72 rounded-2xl overflow-hidden shadow-lg group">
             <Image
               src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80"
               alt="Try in store"
               fill
-              className="object-cover"
+              className="object-cover group-hover:scale-105 transition-transform duration-700"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
           </div>
           <div className="lg:w-1/2">
             <div className="flex items-center gap-2 mb-3">
@@ -367,6 +396,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ── NEWSLETTER ── */}
+      <Newsletter />
     </div>
   );
 }
