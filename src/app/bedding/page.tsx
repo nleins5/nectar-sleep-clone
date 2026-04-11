@@ -6,7 +6,7 @@ import { useSearchParams } from 'next/navigation';
 import { Suspense } from 'react';
 
 const beddingItems = [
-  { name: 'Serenity Sleep Bundle', slug: 'serenity-bundle', price: 149, originalPrice: 249, desc: 'Sheet set + mattress protector. Everything you need.', image: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=600&q=80', badge: 'BEST VALUE' },
+  { name: 'Serenity Sleep Bundle', slug: 'serenity-bundle', price: 149, originalPrice: 249, desc: 'Sheet set + mattress protector. Everything you need.', image: 'https://www.bynder.raymourflanigan.com/transform/ProductCarouselImage/065abf05-c40e-436d-b082-b56cbc49ecbd/FW_NEWB_494175000_3000?io=transform:scale,width:3000&quality=80', badge: 'BEST VALUE' },
   { name: 'Serenity Sheet Set', slug: 'serenity-sheets', price: 89, originalPrice: 129, desc: 'Premium bamboo sheets. Breathable and silky soft.', image: 'https://images.unsplash.com/photo-1629140727571-9b5c6f6267b4?w=600&q=80' },
   { name: 'Serenity Mattress Protector', slug: 'protector', price: 69, originalPrice: 99, desc: 'Waterproof, breathable, and quiet protection.', image: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=600&q=80' },
   { name: 'Firmer Mattress Topper', slug: 'firmer-topper', price: 199, originalPrice: 349, desc: 'Add extra firm support to any mattress.', image: 'https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=600&q=80' },

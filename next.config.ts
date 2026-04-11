@@ -31,6 +31,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'lexingtonoverstockwarehouse.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'www.bynder.raymourflanigan.com',
+      },
     ],
   },
 };

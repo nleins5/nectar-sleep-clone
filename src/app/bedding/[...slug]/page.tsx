@@ -15,7 +15,7 @@ const allBeddingProducts = [
     price: 149,
     originalPrice: 249,
     badge: 'BEST VALUE',
-    image: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=600&q=80',
+    image: 'https://www.bynder.raymourflanigan.com/transform/ProductCarouselImage/065abf05-c40e-436d-b082-b56cbc49ecbd/FW_NEWB_494175000_3000?io=transform:scale,width:3000&quality=80',
     features: ['Premium bamboo sheet set included', 'Waterproof mattress protector included', 'Breathable & temperature regulating', 'Fits mattresses up to 16" deep', 'Machine washable', 'Save $100 vs buying separately'],
     specs: [
       { label: 'Includes', value: 'Sheet set + mattress protector' },
