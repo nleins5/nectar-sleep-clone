@@ -125,7 +125,7 @@ const allBedFrames = [
     description: 'The Foundation Bed Frame is a budget-friendly steel frame that provides excellent support for any Nectar mattress. With just 5 minutes of assembly and a low-profile design, it is the simplest path to better sleep.',
     price: 199,
     originalPrice: 399,
-    image: 'https://m.media-amazon.com/images/I/71zp6bDJYCL._AC_SL1500_.jpg',
+    image: 'https://images.unsplash.com/photo-1505693314120-0d443867891c?w=800&q=80',
     features: ['All-steel construction', '5-minute assembly', 'Low-profile design', 'No box spring needed', 'Non-slip tape strips', 'Noise-free design'],
     specs: [
       { label: 'Material', value: 'Heavy-duty steel' },

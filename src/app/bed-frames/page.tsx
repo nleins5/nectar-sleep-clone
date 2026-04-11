@@ -15,7 +15,7 @@ const bedFrames = [
   { name: 'Onita Storage Bed Frame', slug: 'onita', price: 649, desc: 'Built-in storage drawers for extra bedroom organization.', image: 'https://ashleyfurniture.scene7.com/is/image/AshleyFurniture/EB9630-84-89-B100-12?', badge: 'NEW' },
   { name: 'Mornington Bed Frame', slug: 'mornington', price: 449, desc: 'Upholstered headboard with modern silhouette. Easy assembly.', image: 'https://m.media-amazon.com/images/I/81s6nAgBCYL._AC_UF894,1000_QL80_.jpg' },
   { name: 'Bamboo Bed Frame', slug: 'bamboo', price: 549, desc: 'Sustainable bamboo, Japanese joinery, low-profile design.', image: 'https://media.residenthome.com/nectarsleep/bundles/bamboo/BambooNaturalWood/MultiBrand_BambooFrame_Render_Angle3Q_ColorNatural-Bamboo.webp' },
-  { name: 'Foundation Bed Frame', slug: 'foundation', price: 199, desc: 'Steel frame, simple 5-minute assembly, low profile.', image: 'https://m.media-amazon.com/images/I/71zp6bDJYCL._AC_SL1500_.jpg' },
+  { name: 'Foundation Bed Frame', slug: 'foundation', price: 199, desc: 'Steel frame, simple 5-minute assembly, low profile.', image: 'https://images.unsplash.com/photo-1505693314120-0d443867891c?w=800&q=80' },
 ];
 
 function ProductCard({ product }: { product: { name: string; slug: string; price: number; desc: string; image: string; badge?: string } }) {

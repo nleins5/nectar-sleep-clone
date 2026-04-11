@@ -7,7 +7,7 @@ export const metadata = { title: 'Mattress Bundles – Save Up to 66%' };
 const bundles = [
   { name: 'Premier Adjustable Bundle', slug: 'adjustable-frame', desc: 'Nectar mattress + Premier Adjustable Base', price: 1098, originalPrice: 2748, image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80', badge: 'SAVE 60%' },
   { name: 'Mornington Bundle', slug: 'mornington', desc: 'Nectar mattress + Mornington Bed Frame + Headboard', price: 898, originalPrice: 1998, image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600&q=80', badge: 'BEST VALUE' },
-  { name: 'Foundation Bundle', slug: 'foundation', desc: 'Nectar mattress + Steel Foundation Frame', price: 649, originalPrice: 1398, image: 'https://m.media-amazon.com/images/I/71zp6bDJYCL._AC_SL1500_.jpg', badge: 'SAVE 53%' },
+  { name: 'Foundation Bundle', slug: 'foundation', desc: 'Nectar mattress + Steel Foundation Frame', price: 649, originalPrice: 1398, image: 'https://images.unsplash.com/photo-1505693314120-0d443867891c?w=800&q=80', badge: 'SAVE 53%' },
   { name: 'Bamboo Bundle', slug: 'bamboo', desc: 'Nectar mattress + Japanese Bamboo Bed Frame', price: 998, originalPrice: 2198, image: 'https://media.residenthome.com/nectarsleep/bundles/bamboo/BambooNaturalWood/MultiBrand_BambooFrame_Render_Angle3Q_ColorNatural-Bamboo.webp', badge: 'ECO-FRIENDLY' },
 ];
 

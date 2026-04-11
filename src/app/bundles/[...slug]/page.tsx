@@ -55,7 +55,7 @@ const allBundles = [
     price: 649,
     originalPrice: 1398,
     badge: 'SAVE 53%',
-    image: 'https://m.media-amazon.com/images/I/71zp6bDJYCL._AC_SL1500_.jpg',
+    image: 'https://images.unsplash.com/photo-1505693314120-0d443867891c?w=800&q=80',
     includes: ['Nectar Classic Mattress (Queen)', 'Foundation Steel Frame', 'Non-slip grip strips', 'No tools needed'],
     features: ['5-minute assembly', 'No tools required', 'Low-profile design', '365-Night mattress trial', 'Free shipping', 'Most affordable bundle'],
     specs: [
