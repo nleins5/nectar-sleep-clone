@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { footerLinks } from '@/lib/data';
-import { Globe, Heart, MessageCircle, Play } from 'lucide-react';
+import { Globe, Heart, MessageCircle, Play, Moon, ShieldCheck, Truck, BadgeCheck } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -73,13 +73,15 @@ export default function Footer() {
         {/* Trust badges */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-10 border-b border-gray-800">
           {[
-            { icon: '🌙', text: '365-Night Trial' },
-            { icon: '🛡️', text: 'Forever Warranty™' },
-            { icon: '🚚', text: 'Free Shipping & Returns' },
-            { icon: '✅', text: 'CertiPUR-US® Certified' },
+            { icon: <Moon className="w-5 h-5" />, text: '365-Night Trial', color: '#818cf8' },
+            { icon: <ShieldCheck className="w-5 h-5" />, text: 'Forever Warranty™', color: '#34d399' },
+            { icon: <Truck className="w-5 h-5" />, text: 'Free Shipping & Returns', color: '#60a5fa' },
+            { icon: <BadgeCheck className="w-5 h-5" />, text: 'CertiPUR-US® Certified', color: '#fbbf24' },
           ].map(b => (
             <div key={b.text} className="flex items-center gap-3">
-              <span className="text-2xl">{b.icon}</span>
+              <div style={{ background: `${b.color}15`, border: `1px solid ${b.color}30`, color: b.color }} className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0">
+                {b.icon}
+              </div>
               <span className="text-sm font-medium text-gray-300">{b.text}</span>
             </div>
           ))}
