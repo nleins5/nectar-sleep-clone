@@ -6,16 +6,16 @@ import { useSearchParams } from 'next/navigation';
 import { Suspense } from 'react';
 
 const beddingItems = [
-  { name: 'Serenity Sleep Bundle', slug: 'serenity-bundle', price: 149, originalPrice: 249, desc: 'Sheet set + mattress protector. Everything you need.', image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80', badge: 'BEST VALUE' },
-  { name: 'Serenity Sheet Set', slug: 'serenity-sheets', price: 89, originalPrice: 129, desc: 'Premium bamboo sheets. Breathable and silky soft.', image: 'https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=600&q=80' },
-  { name: 'Serenity Mattress Protector', slug: 'protector', price: 69, originalPrice: 99, desc: 'Waterproof, breathable, and quiet protection.', image: 'https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600&q=80' },
-  { name: 'Firmer Mattress Topper', slug: 'firmer-topper', price: 199, originalPrice: 349, desc: 'Add extra firm support to any mattress.', image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600&q=80' },
-  { name: 'Softer Mattress Topper', slug: 'softer-topper', price: 199, originalPrice: 349, desc: 'Add plush comfort layer to any mattress.', image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80' },
+  { name: 'Serenity Sleep Bundle', slug: 'serenity-bundle', price: 149, originalPrice: 249, desc: 'Sheet set + mattress protector. Everything you need.', image: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=600&q=80', badge: 'BEST VALUE' },
+  { name: 'Serenity Sheet Set', slug: 'serenity-sheets', price: 89, originalPrice: 129, desc: 'Premium bamboo sheets. Breathable and silky soft.', image: 'https://images.unsplash.com/photo-1629140727571-9b5c6f6267b4?w=600&q=80' },
+  { name: 'Serenity Mattress Protector', slug: 'protector', price: 69, originalPrice: 99, desc: 'Waterproof, breathable, and quiet protection.', image: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=600&q=80' },
+  { name: 'Firmer Mattress Topper', slug: 'firmer-topper', price: 199, originalPrice: 349, desc: 'Add extra firm support to any mattress.', image: 'https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=600&q=80' },
+  { name: 'Softer Mattress Topper', slug: 'softer-topper', price: 199, originalPrice: 349, desc: 'Add plush comfort layer to any mattress.', image: 'https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?w=600&q=80' },
 ];
 
 const pillows = [
-  { name: 'Tri-Comfort Adjustable Pillow', slug: 'tri-comfort-pillow', price: 79, originalPrice: 119, desc: 'Three inserts for customizable height and support.', image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80', badge: 'TOP RATED' },
-  { name: 'Serenity Cooling Pillow', slug: 'serenity-pillow', price: 69, originalPrice: 99, desc: 'Gel-infused memory foam with cooling cover.', image: 'https://images.unsplash.com/photo-1616627547584-bf28cee262db?w=600&q=80' },
+  { name: 'Tri-Comfort Adjustable Pillow', slug: 'tri-comfort-pillow', price: 79, originalPrice: 119, desc: 'Three inserts for customizable height and support.', image: 'https://images.unsplash.com/photo-1584545284372-f22510eb7c26?w=600&q=80', badge: 'TOP RATED' },
+  { name: 'Serenity Cooling Pillow', slug: 'serenity-pillow', price: 69, originalPrice: 99, desc: 'Gel-infused memory foam with cooling cover.', image: 'https://images.unsplash.com/photo-1579656381226-5fc0f0100c3b?w=600&q=80' },
 ];
 
 function ProductCard({ product }: { product: { name: string; slug: string; price: number; originalPrice: number; desc: string; image: string; badge?: string } }) {
