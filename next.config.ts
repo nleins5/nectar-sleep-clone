@@ -19,6 +19,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'media.residenthome.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'ashleyfurniture.scene7.com',
+      },
     ],
   },
 };

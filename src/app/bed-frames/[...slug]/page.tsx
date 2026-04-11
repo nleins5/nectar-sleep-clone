@@ -71,7 +71,7 @@ const allBedFrames = [
     price: 649,
     originalPrice: 1099,
     badge: 'NEW',
-    image: 'https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=800&q=80',
+    image: 'https://ashleyfurniture.scene7.com/is/image/AshleyFurniture/EB9630-84-89-B100-12?',
     features: ['4 built-in storage drawers', 'Upholstered fabric headboard', 'Sturdy steel frame', 'No box spring needed', 'Heavy-duty slat system', 'Tool-free assembly'],
     specs: [
       { label: 'Material', value: 'Steel frame + linen upholstery' },
@@ -89,7 +89,7 @@ const allBedFrames = [
     description: 'The Mornington Bed Frame features a beautifully upholstered headboard with a modern silhouette that complements any bedroom décor. Easy assembly and rock-solid construction make it the perfect foundation for your Nectar mattress.',
     price: 449,
     originalPrice: 799,
-    image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80',
+    image: 'https://m.media-amazon.com/images/I/81s6nAgBCYL._AC_UF894,1000_QL80_.jpg',
     features: ['Upholstered padded headboard', 'Modern silhouette design', 'Reinforced center support', 'No box spring needed', 'Noise-free joints', 'Quick 20-minute assembly'],
     specs: [
       { label: 'Material', value: 'Steel frame + fabric upholstery' },
@@ -125,7 +125,7 @@ const allBedFrames = [
     description: 'The Foundation Bed Frame is a budget-friendly steel frame that provides excellent support for any Nectar mattress. With just 5 minutes of assembly and a low-profile design, it is the simplest path to better sleep.',
     price: 199,
     originalPrice: 399,
-    image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&q=80',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqXQZEGTq7gKJHOcca0385uNWCLCLPIEWHPA&s',
     features: ['All-steel construction', '5-minute assembly', 'Low-profile design', 'No box spring needed', 'Non-slip tape strips', 'Noise-free design'],
     specs: [
       { label: 'Material', value: 'Heavy-duty steel' },
