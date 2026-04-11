@@ -15,7 +15,7 @@ const allBeddingProducts = [
     price: 149,
     originalPrice: 249,
     badge: 'BEST VALUE',
-    image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=600&q=80',
     features: ['Premium bamboo sheet set included', 'Waterproof mattress protector included', 'Breathable & temperature regulating', 'Fits mattresses up to 16" deep', 'Machine washable', 'Save $100 vs buying separately'],
     specs: [
       { label: 'Includes', value: 'Sheet set + mattress protector' },
@@ -33,7 +33,7 @@ const allBeddingProducts = [
     description: 'Our Serenity Sheet Set is crafted from 100% organic bamboo viscose for a silky-soft, breathable sleeping experience. Naturally temperature regulating, moisture-wicking, and hypoallergenic – these sheets will transform your nightly comfort.',
     price: 89,
     originalPrice: 129,
-    image: 'https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1629197520317-3aae50d6097c?w=600&q=80',
     features: ['100% organic bamboo viscose', 'Silky-soft & breathable', 'Temperature regulating', 'Moisture-wicking', 'Hypoallergenic', 'Deep pocket – fits up to 16"'],
     specs: [
       { label: 'Material', value: '100% Organic Bamboo Viscose' },
@@ -51,7 +51,7 @@ const allBeddingProducts = [
     description: 'The Serenity Mattress Protector provides waterproof, breathable protection without changing the feel of your Nectar mattress. Its ultra-thin design is completely noiseless and won\'t trap heat, so you sleep cool and protected.',
     price: 69,
     originalPrice: 99,
-    image: 'https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80',
     features: ['100% waterproof barrier', 'Breathable & noiseless', 'Ultra-thin design', 'Won\'t change mattress feel', 'Hypoallergenic', 'Machine washable'],
     specs: [
       { label: 'Material', value: 'Polyester knit + TPU membrane' },
@@ -69,7 +69,7 @@ const allBeddingProducts = [
     description: 'The Firmer Mattress Topper adds a layer of high-density support foam to your mattress, making it firmer and more supportive. Perfect for back and stomach sleepers who want extra firmness, or for refreshing an older mattress.',
     price: 199,
     originalPrice: 349,
-    image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80',
     features: ['High-density support foam', 'Adds firmness without losing comfort', 'CertiPUR-US® certified', 'Breathable open-cell design', 'Non-slip bottom', 'Removable, washable cover'],
     specs: [
       { label: 'Thickness', value: '3"' },
@@ -87,7 +87,7 @@ const allBeddingProducts = [
     description: 'The Softer Mattress Topper adds a cloud-like layer of gel memory foam to your mattress. Perfect for side sleepers who want extra pressure relief at the shoulders and hips, or anyone who loves a plush sleeping surface.',
     price: 199,
     originalPrice: 349,
-    image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80',
     features: ['Gel-infused memory foam', 'Cloud-like plush comfort', 'Pressure relief for side sleepers', 'Cooling gel technology', 'Non-slip bottom', 'Removable, washable cover'],
     specs: [
       { label: 'Thickness', value: '3"' },
@@ -106,7 +106,7 @@ const allBeddingProducts = [
     price: 79,
     originalPrice: 119,
     badge: 'TOP RATED',
-    image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=600&q=80',
     features: ['3 removable inserts', 'Adjustable height & firmness', 'Cooling gel memory foam', 'Breathable mesh cover', 'Works for all sleep positions', 'Machine washable cover'],
     specs: [
       { label: 'Fill', value: 'Gel memory foam (3 inserts)' },
@@ -124,7 +124,7 @@ const allBeddingProducts = [
     description: 'The Serenity Cooling Pillow features gel-infused memory foam with a cooling PCM cover that actively draws heat away from your skin. Wake up refreshed with consistent support and temperature regulation all night long.',
     price: 69,
     originalPrice: 99,
-    image: 'https://images.unsplash.com/photo-1616627547584-bf28cee262db?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=600&q=80',
     features: ['Gel-infused memory foam', 'Phase Change Material cover', 'Active heat dissipation', 'Ergonomic contour shape', 'Hypoallergenic', 'Removable, washable cover'],
     specs: [
       { label: 'Fill', value: 'Gel-infused memory foam' },
