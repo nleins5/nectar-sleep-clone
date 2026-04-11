@@ -55,7 +55,7 @@ const allBundles = [
     price: 649,
     originalPrice: 1398,
     badge: 'SAVE 53%',
-    image: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=600&q=80',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqXQZEGTq7gKJHOcca0385uNWCLCLPIEWHPA&s',
     includes: ['Nectar Classic Mattress (Queen)', 'Foundation Steel Frame', 'Non-slip grip strips', 'No tools needed'],
     features: ['5-minute assembly', 'No tools required', 'Low-profile design', '365-Night mattress trial', 'Free shipping', 'Most affordable bundle'],
     specs: [
@@ -75,7 +75,7 @@ const allBundles = [
     price: 998,
     originalPrice: 2198,
     badge: 'ECO-FRIENDLY',
-    image: 'https://images.unsplash.com/photo-1616627547584-bf28cee262db?w=600&q=80',
+    image: 'https://media.residenthome.com/nectarsleep/bundles/bamboo/BambooNaturalWood/MultiBrand_BambooFrame_Render_Angle3Q_ColorNatural-Bamboo.webp',
     includes: ['Nectar Classic Mattress (Queen)', 'Bamboo Bed Frame', 'Eco-friendly packaging', 'All assembly hardware'],
     features: ['100% sustainable bamboo', 'Japanese joinery – no metal fasteners', 'Low-profile zen design', '365-Night mattress trial', 'Free shipping', 'Carbon-neutral delivery'],
     specs: [
