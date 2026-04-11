@@ -212,7 +212,7 @@ export const mattresses: Product[] = [
       { label: 'Warranty', value: 'Forever Warranty™' },
     ],
     images: [
-      'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80',
+      'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&q=80',
     ],
     firmness: 5,
     sleepPositions: ['Side', 'Back'],
