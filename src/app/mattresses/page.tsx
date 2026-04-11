@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { mattresses } from '@/lib/data';
-import { Star, SlidersHorizontal } from 'lucide-react';
+import { SlidersHorizontal, ChevronRight } from 'lucide-react';
 
 function Stars({ rating }: { rating: number }) {
   return (
@@ -31,25 +31,27 @@ export default function MattressesPage() {
   return (
     <div>
       {/* Hero */}
-      <section className="gradient-dark text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 lg:px-8 text-center">
+      <section className="gradient-hero text-white py-16 relative overflow-hidden noise-bg">
+        <div className="absolute top-0 right-1/4 w-72 h-72 bg-blue-500/15 rounded-full blur-[100px]" />
+        <div className="relative max-w-7xl mx-auto px-4 lg:px-8 text-center">
+          <span className="inline-block text-sm font-semibold text-blue-300 uppercase tracking-wider mb-3">Our Collection</span>
           <h1 className="section-title text-white text-4xl lg:text-5xl mb-4">Pick Your Memory Foam or Hybrid Mattress</h1>
-          <p className="text-blue-200 max-w-2xl mx-auto text-lg">Compare our award-winning mattresses. All come with a 365-night trial and forever warranty.</p>
+          <p className="text-blue-200/80 max-w-2xl mx-auto text-lg">Compare our award-winning mattresses. All come with a 365-night trial and forever warranty.</p>
         </div>
       </section>
 
       {/* Filters */}
       <section className="border-b border-gray-200 bg-white sticky top-[60px] z-30">
         <div className="max-w-7xl mx-auto px-4 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
             <SlidersHorizontal className="w-4 h-4 text-gray-400" />
-            <div className="flex bg-gray-100 rounded-lg p-0.5">
+            <div className="flex bg-gray-100 rounded-xl p-1">
               {(['all', 'memory-foam', 'hybrid'] as const).map(f => (
                 <button
                   key={f}
                   onClick={() => setFilter(f)}
-                  className={`px-4 py-2 rounded-md text-sm font-medium transition-all capitalize ${
-                    filter === f ? 'bg-white shadow-sm text-blue-700' : 'text-gray-500 hover:text-gray-700'
+                  className={`px-5 py-2 rounded-lg text-sm font-medium transition-all duration-300 capitalize ${
+                    filter === f ? 'bg-white shadow-md text-blue-700' : 'text-gray-500 hover:text-gray-700'
                   }`}
                 >
                   {f === 'all' ? 'All' : f === 'memory-foam' ? 'Memory Foam' : 'Hybrid'}
@@ -60,7 +62,7 @@ export default function MattressesPage() {
           <select
             value={sort}
             onChange={e => setSort(e.target.value as typeof sort)}
-            className="text-sm border border-gray-200 rounded-lg px-4 py-2 bg-white"
+            className="text-sm border border-gray-200 rounded-xl px-4 py-2.5 bg-white focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all"
           >
             <option value="popular">Most Popular</option>
             <option value="price-low">Price: Low to High</option>
@@ -70,7 +72,7 @@ export default function MattressesPage() {
       </section>
 
       {/* Product Grid */}
-      <section className="py-12 bg-gray-50">
+      <section className="py-12 bg-gray-50/80">
         <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <p className="text-sm text-gray-500 mb-6">{sorted.length} mattresses</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -83,7 +85,7 @@ export default function MattressesPage() {
               return (
                 <Link key={product.id} href={`/mattresses/${product.slug}`} className="product-card bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm flex flex-col group">
                   <div className="relative aspect-product bg-gray-100 overflow-hidden">
-                    <Image src={product.images[0]} alt={product.name} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="(max-width: 768px) 100vw, 33vw" />
+                    <Image src={product.images[0]} alt={product.name} fill className="object-cover card-image" sizes="(max-width: 768px) 100vw, 33vw" />
                     {product.badge && <span className="absolute top-3 left-3 badge badge-blue">{product.badge}</span>}
                     <span className="absolute top-3 right-3 badge badge-red">-{pct}%</span>
                   </div>
@@ -96,15 +98,17 @@ export default function MattressesPage() {
                     <p className="text-sm text-gray-500 mb-3 line-clamp-2 flex-1">{product.tagline}</p>
                     <div className="flex flex-wrap gap-1 mb-3">
                       {product.features.slice(0, 2).map(f => (
-                        <span key={f} className="text-[10px] bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full">{f}</span>
+                        <span key={f} className="feature-pill">{f}</span>
                       ))}
                     </div>
                     <div className="flex items-baseline gap-2 mb-3">
                       <span className="text-2xl font-bold text-gray-900">${qp}</span>
                       <span className="text-sm text-gray-400 line-through">${qo}</span>
                     </div>
-                    <div className="text-xs text-gray-400">Queen | Starting from ${Math.min(...Object.values(product.prices))}</div>
-                    <div className="mt-4 btn-primary w-full text-center">Shop Now</div>
+                    <div className="text-xs text-gray-400 mb-4">Queen | Starting from ${Math.min(...Object.values(product.prices))}</div>
+                    <div className="btn-primary w-full text-center">
+                      Shop Now <ChevronRight className="w-4 h-4" />
+                    </div>
                   </div>
                 </Link>
               );
@@ -113,7 +117,7 @@ export default function MattressesPage() {
         </div>
       </section>
 
-      {/* Comparison hint */}
+      {/* Quiz hint */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 lg:px-8 text-center">
           <h2 className="section-title text-3xl mb-4">Not Sure Which Mattress?</h2>
