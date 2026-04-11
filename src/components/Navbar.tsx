@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { ShoppingCart, Search, User, Menu, X, ChevronDown } from 'lucide-react';
 import { navItems } from '@/lib/data';
@@ -11,13 +11,25 @@ export default function Navbar() {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [searchOpen, setSearchOpen] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const headerRef = useRef<HTMLElement>(null);
+
+  const updateHeaderBottom = useCallback(() => {
+    if (headerRef.current) {
+      const bottom = headerRef.current.getBoundingClientRect().bottom;
+      document.documentElement.style.setProperty('--header-bottom', `${bottom}px`);
+    }
+  }, []);
   const { totalItems, openCart } = useCart();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 10);
+      updateHeaderBottom();
+    };
     window.addEventListener('scroll', onScroll);
+    updateHeaderBottom();
     return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+  }, [updateHeaderBottom]);
 
   // close mobile menu on resize
   useEffect(() => {
@@ -30,6 +42,7 @@ export default function Navbar() {
 
   const handleMouseEnter = (label: string) => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    updateHeaderBottom();
     setActiveMenu(label);
   };
   const handleMouseLeave = () => {
@@ -44,7 +57,7 @@ export default function Navbar() {
       </div>
 
       {/* Main Header */}
-      <header className={`sticky top-0 z-50 bg-white/95 backdrop-blur-md transition-all duration-300 ${scrolled ? 'header-shadow' : 'border-b border-gray-50'}`}>
+      <header ref={headerRef} className={`sticky top-0 z-50 bg-white/95 backdrop-blur-md transition-all duration-300 ${scrolled ? 'header-shadow' : 'border-b border-gray-50'}`}>
         {/* Top row */}
         <div className="hidden lg:flex justify-end items-center gap-6 px-8 py-1 text-xs text-gray-500 border-b border-gray-100/80">
           <Link href="/stores" className="hover:text-blue-700 transition-colors">Find in Store</Link>
@@ -88,7 +101,10 @@ export default function Navbar() {
 
                 {/* Mega Menu */}
                 {item.megaMenu && (
-                  <div className={`mega-menu ${activeMenu === item.label ? 'open' : ''}`}>
+                  <div
+                    className={`mega-menu ${activeMenu === item.label ? 'open' : ''}`}
+                    style={{ top: 'var(--header-bottom, 80px)' }}
+                  >
                     <div className="max-w-6xl mx-auto px-8 py-8 grid grid-cols-3 gap-8">
                       {item.megaMenu.map((section) => (
                         <div key={section.title}>

@@ -284,9 +284,10 @@ body {
 
 /* ── Mega menu ── */
 .mega-menu {
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  top: auto;
   left: 0;
+  right: 0;
   width: 100vw;
   background: white;
   box-shadow: 0 12px 48px rgba(0,0,0,0.12);
