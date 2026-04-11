@@ -51,6 +51,12 @@ export default function ProductPage() {
   const productReviews = reviews.filter(r => r.productId === product.id || !r.productId);
   const sizes: Size[] = ['Twin', 'Twin XL', 'Full', 'Queen', 'King', 'Cal King'];
 
+  // Rotate images based on selected size so each size shows different photos
+  const sizeIndex = sizes.indexOf(selectedSize);
+  const rotatedImages = product.images.length > 1
+    ? [...product.images.slice(sizeIndex % product.images.length), ...product.images.slice(0, sizeIndex % product.images.length)]
+    : product.images;
+
   const handleAddToCart = () => {
     addItem({
       productId: product.id,
@@ -58,7 +64,7 @@ export default function ProductPage() {
       size: selectedSize,
       price,
       originalPrice: orig,
-      image: product.images[0],
+      image: rotatedImages[0],
       slug: product.slug,
     }, qty);
     setAddedToCart(true);
@@ -85,8 +91,9 @@ export default function ProductPage() {
           <div className="space-y-4 animate-fade-in">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100 group">
               <Image
-                src={product.images[selectedImage] || product.images[0]}
-                alt={product.name}
+                key={`main-${selectedSize}-${selectedImage}`}
+                src={rotatedImages[selectedImage] || rotatedImages[0]}
+                alt={`${product.name} - ${selectedSize}`}
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
                 priority
@@ -96,11 +103,11 @@ export default function ProductPage() {
                 <Heart className="w-5 h-5 text-gray-600" />
               </button>
             </div>
-            {product.images.length > 1 && (
+            {rotatedImages.length > 1 && (
               <div className="grid grid-cols-4 gap-2">
-                {product.images.map((img, i) => (
+                {rotatedImages.map((img, i) => (
                   <button
-                    key={i}
+                    key={`${selectedSize}-${i}`}
                     onClick={() => setSelectedImage(i)}
                     className={`relative aspect-square rounded-xl overflow-hidden border-2 transition-all ${
                       selectedImage === i ? 'border-blue-500 shadow-md' : 'border-gray-200 hover:border-gray-300'
